@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Consejo Comunitario Afrocolombiano COCOAPI de Nechí. Institucionalidad, transparencia, liderazgo comunitario y conservación ambiental." />
+  <meta property="og:title" content="COCOAPI - Consejo Comunitario Afrocolombiano" />
+  <meta property="og:description" content="Sitio institucional del Consejo Comunitario Afrocolombiano de Nechí, comprometido con la identidad, la cultura y la sostenibilidad territorial." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%231f533d'/%3E%3Cpath d='M18 42c5-9 9-16 14-24 5 8 9 15 14 24H18z' fill='%23f5d96b'/%3E%3Cpath d='M24 42h16' stroke='%23fff' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E" />
+  <title>COCOAPI | Consejo Comunitario Afrocolombiano</title>
+  <style>
+    :root {
+      --forest-950: #10271f;
+      --forest-900: #163426;
+      --forest-800: #234b38;
+      --forest-700: #2f6146;
+      --forest-600: #3f7857;
+      --forest-500: #5d8f63;
+      --olive: #7f8f4b;
+      --sage: #c4d2b6;
+      --cream: #f5efe0;
+      --paper: #fcfbf7;
+      --ink: #20312c;
+      --muted: #5e6b66;
+      --line: #e3e9e2;
+      --gold: #c7a24a;
+      --shadow: 0 18px 45px rgba(16, 39, 31, 0.12);
+      --shadow-soft: 0 8px 24px rgba(16, 39, 31, 0.08);
+      --radius-xl: 26px;
+      --radius-lg: 18px;
+      --radius-md: 14px;
+      --max-width: 1220px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--ink);
+      background: linear-gradient(180deg, #f7f5ee 0%, #f3f7f1 100%);
+      min-height: 100vh;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea { font: inherit; }
+
+    .site-shell {
+      min-height: 100vh;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(14px);
+      background: rgba(252, 251, 247, 0.9);
+      border-bottom: 1px solid rgba(16, 39, 31, 0.06);
+      box-shadow: 0 6px 20px rgba(16, 39, 31, 0.04);
+    }
+    .topbar-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      color: var(--forest-900);
+      letter-spacing: 0.02em;
+    }
+    .brand-mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--forest-700), var(--forest-500));
+      color: white;
+      font-size: 1.1rem;
+      box-shadow: var(--shadow-soft);
+    }
+    .nav-toggle {
+      display: none;
+      border: 0;
+      background: var(--forest-800);
+      color: white;
+      border-radius: 999px;
+      padding: 10px 12px;
+      cursor: pointer;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      padding: 8px 12px;
+      border-radius: 999px;
+      color: var(--forest-800);
+      font-size: 0.95rem;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      background: var(--forest-100, #eef6eb);
+      color: var(--forest-900);
+      outline: none;
+    }
+    .nav-cta {
+      background: linear-gradient(135deg, var(--forest-800), var(--forest-600));
+      color: white;
+      padding: 10px 15px;
+      border-radius: 999px;
+      box-shadow: var(--shadow-soft);
+      font-weight: 600;
+    }
+
+    main { width: 100%; }
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      align-items: center;
+      padding: 42px 0 28px;
+    }
+    .hero-copy {
+      background: rgba(255,255,255,0.78);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(16,39,31,0.06);
+      border-radius: var(--radius-xl);
+      padding: 34px;
+      box-shadow: var(--shadow);
+    }
+    .eyebrow {
+      display: inline-block;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(197, 214, 181, 0.44);
+      color: var(--forest-800);
+      font-size: 0.83rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: clamp(2rem, 3vw, 3rem);
+      line-height: 1.12;
+      color: var(--forest-950);
+      margin-bottom: 14px;
+      letter-spacing: -0.02em;
+    }
+    .hero-copy p { color: var(--muted); font-size: 1.04rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+    .btn {
+      padding: 12px 16px;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: linear-gradient(135deg, var(--forest-700), var(--forest-500)); color: white; box-shadow: var(--shadow-soft); }
+    .btn-secondary { background: white; color: var(--forest-800); border-color: var(--line); }
+    .hero-meta {
+      margin-top: 24px;
+      display: grid;
+      gap: 10px;
+      color: var(--forest-800);
+      font-size: 0.95rem;
+    }
+    .hero-meta-item { display: flex; gap: 10px; align-items: center; }
+    .hero-meta-item::before { content: "•"; color: var(--gold); font-size: 1.2rem; }
+
+    .hero-visual {
+      min-height: 420px;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background: linear-gradient(140deg, rgba(4, 32, 24, 0.9), rgba(59, 95, 67, 0.55));
+      position: relative;
+      border: 1px solid rgba(255,255,255,0.22);
+    }
+    .hero-visual::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(0,0,0,0.3), rgba(0,0,0,0.02));
+      z-index: 1;
+    }
+    .hero-visual .placeholder-panel {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 28px;
+      z-index: 2;
+      color: white;
+      background:
+        radial-gradient(circle at top left, rgba(255,255,255,0.14), transparent 30%),
+        linear-gradient(180deg, rgba(255,255,255,0.12), rgba(8,24,18,0.28));
+    }
+    .placeholder-chip {
+      display: inline-block;
+      width: fit-content;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+    }
+    .placeholder-title { font-size: 1.4rem; font-weight: 700; margin-bottom: 8px; }
+    .placeholder-text { max-width: 420px; color: rgba(255,255,255,0.9); }
+
+    section { padding: 34px 0; }
+    .section-heading { max-width: 760px; margin-bottom: 18px; }
+    .section-heading h2 { font-size: 1.65rem; color: var(--forest-900); margin-bottom: 8px; }
+    .section-heading p { color: var(--muted); }
+
+    .card-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+    .card {
+      background: white;
+      border: 1px solid rgba(16,39,31,0.06);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      box-shadow: var(--shadow-soft);
+    }
+    .card h3 { color: var(--forest-800); margin-bottom: 10px; }
+    .card p, .card li { color: var(--muted); }
+    .card ul { padding-left: 18px; margin-top: 10px; display: grid; gap: 8px; }
+    .card .accent { display: inline-block; margin-top: 12px; color: var(--gold); font-weight: 700; }
+
+    .pill-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .pill-list span { padding: 7px 10px; border-radius: 999px; background: var(--cream); color: var(--forest-800); font-size: 0.9rem; }
+
+    .story-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 20px; align-items: start; }
+    .media-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: 16px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(16,39,31,0.06);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .media-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+    .placeholder-panel {
+      width: 100%;
+      min-height: 280px;
+      border-radius: 16px;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(24,60,44,0.9), rgba(93,143,99,0.65));
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 22px;
+      color: white;
+    }
+    .placeholder-panel::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(255,255,255,0.16), transparent 45%);
+      pointer-events: none;
+    }
+    .placeholder-panel > * { position: relative; z-index: 1; }
+    .placeholder-panel small { text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.78rem; opacity: 0.9; }
+    .placeholder-panel strong { font-size: 1.1rem; margin-top: 6px; display: inline-block; }
+    .placeholder-panel span { margin-top: 8px; color: rgba(255,255,255,0.9); }
+
+    .values-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    .icon-card { text-align: left; }
+    .icon-card .icon { width: 46px; height: 46px; margin-bottom: 12px; border-radius: 14px; display: grid; place-items: center; background: linear-gradient(135deg, var(--cream), #e6efdf); color: var(--forest-800); font-size: 1.1rem; }
+
+    .org-grid, .project-grid, .news-grid, .docs-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+    .profile-card, .project-card, .news-card, .doc-card, .partner-card { background: white; border: 1px solid rgba(16,39,31,0.06); border-radius: var(--radius-lg); box-shadow: var(--shadow-soft); overflow: hidden; transition: transform 0.25s ease, box-shadow 0.25s ease; }
+    .profile-card:hover, .project-card:hover, .news-card:hover, .doc-card:hover, .partner-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .profile-card .media-card, .project-card .media-card, .news-card .media-card { border-radius: 0; padding: 0; box-shadow: none; border: 0; }
+    .profile-card .card-body, .project-card .card-body, .news-card .card-body, .doc-card .card-body { padding: 18px 18px 20px; }
+    .profile-card .role { color: var(--gold); font-size: 0.92rem; font-weight: 700; margin-bottom: 6px; }
+    .profile-card .desc { color: var(--muted); font-size: 0.95rem; }
+
+    .project-card .card-body .btn { margin-top: 14px; padding: 10px 13px; }
+    .news-meta { display: flex; flex-wrap: wrap; gap: 10px; color: var(--muted); font-size: 0.9rem; margin-bottom: 10px; }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .gallery-item {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      cursor: zoom-in;
+      min-height: 190px;
+      background: white;
+      border: 1px solid rgba(16,39,31,0.06);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .gallery-item:hover { transform: translateY(-3px) scale(1.01); box-shadow: var(--shadow); }
+    .gallery-item .placeholder-panel { min-height: 210px; border-radius: 0; }
+    .gallery-item figcaption {
+      position: absolute;
+      left: 12px;
+      bottom: 12px;
+      background: rgba(255,255,255,0.92);
+      color: var(--forest-800);
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+
+    .partners-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
+    .partner-card { padding: 18px; min-height: 120px; display: grid; place-items: center; filter: grayscale(1); transition: filter 0.25s ease, transform 0.25s ease; }
+    .partner-card:hover { filter: grayscale(0); transform: translateY(-3px); }
+    .partner-card .logo-mark { font-weight: 800; color: var(--forest-700); letter-spacing: 0.04em; font-size: 0.95rem; text-transform: uppercase; text-align: center; }
+
+    .video-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .video-card { overflow: hidden; }
+    .video-card .video-thumb { min-height: 220px; position: relative; display: grid; place-items: center; }
+    .video-card .video-thumb::before { content: "▶"; position: relative; z-index: 3; font-size: 2rem; color: white; width: 62px; height: 62px; border-radius: 50%; display: grid; place-items: center; background: rgba(16,39,31,0.72); border: 1px solid rgba(255,255,255,0.25); }
+    .video-card .video-thumb::after { content: ""; position: absolute; inset: 0; background: linear-gradient(120deg, rgba(0,0,0,0.18), rgba(0,0,0,0.34)); }
+
+    .contact-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 20px; }
+    .contact-list { display: grid; gap: 10px; margin-top: 12px; }
+    .contact-list div { display: flex; gap: 10px; align-items: flex-start; color: var(--muted); }
+    .contact-list strong { color: var(--forest-800); }
+    form { display: grid; gap: 12px; }
+    .form-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    label { font-size: 0.95rem; font-weight: 600; color: var(--forest-800); }
+    input, textarea { width: 100%; border: 1px solid var(--line); border-radius: 12px; padding: 12px 13px; background: #fcfcfa; color: var(--ink); }
+    textarea { min-height: 120px; resize: vertical; }
+
+    footer {
+      background: var(--forest-950);
+      color: rgba(255,255,255,0.9);
+      padding: 34px 24px 28px;
+      margin-top: 34px;
+    }
+    .footer-grid { max-width: var(--max-width); margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 22px; }
+    .footer h3 { color: white; margin-bottom: 8px; }
+    .footer a { color: rgba(255,255,255,0.82); }
+    .footer-links { display: grid; gap: 6px; }
+    .footer-bottom { max-width: var(--max-width); margin: 0 auto; padding-top: 18px; margin-top: 18px; border-top: 1px solid rgba(255,255,255,0.16); font-size: 0.92rem; color: rgba(255,255,255,0.72); }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(8, 24, 18, 0.78);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      z-index: 200;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox-panel {
+      width: min(760px, 100%);
+      background: white;
+      border-radius: 24px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+    .lightbox-panel .placeholder-panel { min-height: 360px; }
+    .lightbox-panel button { margin-top: 12px; border: 0; padding: 10px 14px; border-radius: 999px; cursor: pointer; background: var(--forest-800); color: white; }
+
+    @media (max-width: 960px) {
+      .hero, .story-grid, .contact-grid, .footer-grid { grid-template-columns: 1fr; }
+      .card-grid, .org-grid, .project-grid, .news-grid, .docs-grid, .values-grid, .partners-grid, .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 760px) {
+      .topbar-inner { padding: 14px 16px; }
+      .nav-toggle { display: inline-flex; }
+      .nav-links {
+        position: absolute;
+        top: 66px;
+        right: 16px;
+        left: 16px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        background: white;
+        border: 1px solid rgba(16,39,31,0.08);
+        border-radius: 16px;
+        padding: 12px;
+        box-shadow: var(--shadow);
+      }
+      .nav-links.open { display: flex; }
+      .nav-cta { text-align: center; }
+      .container { padding: 16px; }
+      .hero-copy { padding: 24px; }
+      .card-grid, .org-grid, .project-grid, .news-grid, .docs-grid, .values-grid, .partners-grid, .gallery-grid, .video-grid, .form-row { grid-template-columns: 1fr; }
+      .hero-visual { min-height: 320px; }
+      .gallery-item { min-height: 180px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="#inicio" aria-label="Inicio COCOAPI">
+          <span class="brand-mark">🌿</span>
+          <span>COCOAPI · Nechí</span>
+        </a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">☰</button>
+        <nav class="nav-links" id="site-nav" aria-label="Navegación principal">
+          <a href="#inicio">Inicio</a>
+          <a href="#historia">Nuestra Historia</a>
+          <a href="#organizacion">Organización</a>
+          <a href="#comunidad">Comunidad</a>
+          <a href="#proyectos">Proyectos</a>
+          <a href="#transparencia">Transparencia</a>
+          <a href="#noticias">Noticias</a>
+          <a href="#galeria">Galería</a>
+          <a href="#documentos">Documentos</a>
+          <a href="#contacto">Contacto</a>
+          <a class="nav-cta" href="#contacto">Únete a la Comunidad</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="inicio">
+      <div class="container">
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="hero-copy">
+            <div class="eyebrow">Departamento de Antioquia · Municipio de Nechí</div>
+            <h1 id="hero-title">Consejo Comunitario Afrocolombiano COCOAPI</h1>
+            <p>Entidad comunitaria reconocida por su liderazgo territorial, su compromiso con la cultura afrocolombiana y la defensa del territorio, la vida y el ambiente.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#historia">Conocer más</a>
+              <a class="btn btn-secondary" href="#proyectos">Ver proyectos</a>
+            </div>
+            <div class="hero-meta" aria-label="Datos institucionales">
+              <div class="hero-meta-item">Reconocido conforme a la Ley 70 de 1993</div>
+              <div class="hero-meta-item">NIT 901.078.566-0</div>
+              <div class="hero-meta-item">Resolución No. 0493 de 2016 · Resolución vigente No. 168 de 2026</div>
+            </div>
+          </div>
+          <div class="hero-visual" aria-label="Espacio preparado para fotografía institucional del territorio de Nechí">
+            <div class="placeholder-panel">
+              <span class="placeholder-chip">Fotografía representativa</span>
+              <strong>Comunidad · Paisajes · Río Cauca · Naturaleza</strong>
+              <span>Espacio elegante preparado para incorporar una fotografía real del territorio, la biodiversidad y las actividades comunitarias.</span>
+            </div>
+          </div>
+        </section>
+
+        <section id="historia">
+          <div class="section-heading">
+            <h2>Nuestra Historia</h2>
+            <p>Una organización que articula memoria, territorio y futuro desde la dignidad comunitaria y la participación activa de sus habitantes.</p>
+          </div>
+          <div class="story-grid">
+            <div class="card">
+              <h3>Historia institucional</h3>
+              <p>COCOAPI nace como una respuesta organizada a la necesidad de fortalecer los derechos colectivos, preservar la cultura afrocolombiana y promover el desarrollo sostenible en el municipio de Nechí. Su labor se sostiene en la participación, la legalidad, la educación y la defensa del ambiente.</p>
+              <div class="pill-list">
+                <span>Identidad afrocolombiana</span>
+                <span>Territorio vivo</span>
+                <span>Participación comunitaria</span>
+              </div>
+            </div>
+            <div class="media-card">
+              <div class="placeholder-panel">
+                <small>Fotografía institucional</small>
+                <strong>Espacio para imagen de alta calidad</strong>
+                <span>Se recomienda una fotografía que represente la organización, las comunidades y el paisaje del municipio.</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="comunidad">
+          <div class="section-heading">
+            <h2>Más que una institución</h2>
+            <p>Una propuesta que combina liderazgo comunitario, respeto por la naturaleza y confianza institucional.</p>
+          </div>
+          <div class="card-grid">
+            <article class="card">
+              <h3>Misión</h3>
+              <p>Fortalecer la organización comunitaria afrocolombiana de Nechí para proteger sus derechos, impulsar el desarrollo sostenible y conservar su identidad cultural y ambiental.</p>
+              <span class="accent">Protección · Desarrollo · Territorio</span>
+            </article>
+            <article class="card">
+              <h3>Visión</h3>
+              <p>Ser un referente territorial de organización, participación, gestión comunitaria y sostenibilidad, reconocido por su aporte a la vida digna de las familias y la conservación del entorno.</p>
+              <span class="accent">Referente · Sostenibilidad · Futuro</span>
+            </article>
+          </div>
+        </section>
+
+        <section>
+          <div class="section-heading">
+            <h2>Principios y valores</h2>
+            <p>Una base ética y comunitaria para la gestión institucional.</p>
+          </div>
+          <div class="card-grid">
+            <article class="card">
+              <h3>Principios</h3>
+              <ul>
+                <li>Participación activa de la comunidad.</li>
+                <li>Respeto por la diversidad cultural y territorial.</li>
+                <li>Transparencia en la gestión y la rendición de cuentas.</li>
+                <li>Defensa del ambiente como bien común.</li>
+              </ul>
+            </article>
+            <article class="card">
+              <h3>Valores</h3>
+              <ul>
+                <li>Respeto</li>
+                <li>Solidaridad</li>
+                <li>Equidad</li>
+                <li>Responsabilidad ambiental</li>
+                <li>Autonomía comunitaria</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section>
+          <div class="section-heading">
+            <h2>Objetivos</h2>
+            <p>Orientaciones claras para el fortalecimiento de la entidad y el bienestar colectivo.</p>
+          </div>
+          <div class="values-grid">
+            <article class="card icon-card">
+              <div class="icon">🌱</div>
+              <h3>Conservación ambiental</h3>
+              <p>Promover acciones que protejan los recursos naturales y el equilibrio del territorio.</p>
+            </article>
+            <article class="card icon-card">
+              <div class="icon">📚</div>
+              <h3>Educación y formación</h3>
+              <p>Fortalecer procesos educativos, culturales y de participación comunitaria.</p>
+            </article>
+            <article class="card icon-card">
+              <div class="icon">🤝</div>
+              <h3>Organización social</h3>
+              <p>Impulsar liderazgo, articulación y defensa de los derechos colectivos.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="organizacion">
+          <div class="section-heading">
+            <h2>Estructura organizacional</h2>
+            <p>Una organización con instancias de representación, participación y vigilancia comunitaria.</p>
+          </div>
+          <div class="org-grid">
+            <article class="profile-card">
+              <div class="media-card">
+                <div class="placeholder-panel">
+                  <small>Fotografía</small>
+                  <strong>Asamblea General</strong>
+                  <span>Espacio preparado para fotografía institucional.</span>
+                </div>
+              </div>
+              <div class="card-body">
+                <h3>Asamblea General</h3>
+                <p class="role">Máxima instancia participativa</p>
+                <p class="desc">Representa la voluntad colectiva y orienta el rumbo institucional.</p>
+              </div>
+            </article>
+            <article class="profile-card">
+              <div class="media-card">
+                <div class="placeholder-panel">
+                  <small>Fotografía</small>
+                  <strong>Junta Directiva</strong>
+                  <span>Espacio preparado para fotografía institucional.</span>
+                </div>
+              </div>
+              <div class="card-body">
+                <h3>Junta Directiva</h3>
+                <p class="role">Gobierno comunitario</p>
+                <p class="desc">Dirige las decisiones estratégicas y el acompañamiento institucional.</p>
+              </div>
+            </article>
+            <article class="profile-card">
+              <div class="media-card">
+                <div class="placeholder-panel">
+                  <small>Fotografía</small>
+                  <strong>Representante Legal</strong>
+                  <span>Espacio preparado para fotografía institucional.</span>
+                </div>
+              </div>
+              <div class="card-body">
+                <h3>Representante Legal</h3>
+                <p class="role">Vinculación jurídica</p>
+                <p class="desc">Garantiza la representación formal y la continuidad institucional.</p>
+              </div>
+            </article>
+            <article class="profile-card">
+              <div class="media-card">
+                <div class="placeholder-panel">
+                  <small>Fotografía</small>
+                  <strong>Comité Ambiental</strong>
+                  <span>Espacio preparado para fotografía institucional.</span>
+                </div>
+              </div>
+              <div class="card-body">
+                <h3>Comité Ambiental</h3>
+                <p class="role">Conservación</p>
+                <p class="desc">Impulsa acciones de protección, restauración y defensa del entorno.</p>
+              </div>
+            </article>
+            <article class="profile-card">
+              <div class="media-card">
+                <div class="placeholder-panel">
+                  <small>Fotografía</small>
+                  <strong>Comité de Educación</strong>
+                  <span>Espacio preparado para fotografía institucional.</span>
+                </div>
+              </div>
+              <div class="card-body">
+                <h3>Comité de Educación</h3>
+                <p class="role">Formación comunitaria</p>
+                <p class="desc">Promueve procesos pedagógicos, culturales y de participación.</p>
+              </div>
+            </article>
+            <article class="profile-card">
+              <div class="media-card">
+                <div class="placeholder-panel">
+                  <small>Fotografía</small>
+                  <strong>Comité de Mujeres</strong>
+                  <span>Espacio preparado para fotografía institucional.</span>
+                </div>
+              </div>
+              <div class="card-body">
+                <h3>Comité de Mujeres</h3>
+                <p class="role">Empoderamiento</p>
+                <p class="desc">Fortalece la participación y el liderazgo femenino en la comunidad.</p>
+              </div>
+            </article>
+            <article class="profile-card">
+              <div class="media-card">
+                <div class="placeholder-panel">
+                  <small>Fotografía</small>
+                  <strong>Comité de Jóvenes</strong>
+                  <span>Espacio preparado para fotografía institucional.</span>
+                </div>
+              </div>
+              <div class="card-body">
+                <h3>Comité de Jóvenes</h3>
+                <p class="role">Renovación</p>
+                <p class="desc">Aporta nuevas miradas, creatividad y compromiso territorial.</p>
+              </div>
+            </article>
+            <article class="profile-card">
+              <div class="media-card">
+                <div class="placeholder-panel">
+                  <small>Fotografía</small>
+                  <strong>Comité Cultural</strong>
+                  <span>Espacio preparado para fotografía institucional.</span>
+                </div>
+              </div>
+              <div class="card-body">
+                <h3>Comité Cultural</h3>
+                <p class="role">Memoria y tradición</p>
+                <p class="desc">Cuidar la historia, las prácticas y la expresión afrocolombiana.</p>
+              </div>
+            </article>
+            <article class="profile-card">
+              <div class="media-card">
+                <div class="placeholder-panel">
+                  <small>Fotografía</small>
+                  <strong>Comité de Producción</strong>
+                  <span>Espacio preparado para fotografía institucional.</span>
+                </div>
+              </div>
+              <div class="card-body">
+                <h3>Comité de Producción</h3>
+                <p class="role">Economía comunitaria</p>
+                <p class="desc">Promueve prácticas productivas sostenibles y dignas.</p>
+              </div>
+            </article>
+            <article class="profile-card">
+              <div class="media-card">
+                <div class="placeholder-panel">
+                  <small>Fotografía</small>
+                  <strong>Comité de Vigilancia</strong>
+                  <span>Espacio preparado para fotografía institucional.</span>
+                </div>
+              </div>
+              <div class="card-body">
+                <h3>Comité de Vigilancia</h3>
+                <p class="role">Control social</p>
+                <p class="desc">Aporta seguimiento, acompañamiento y responsabilidad ciudadana.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="proyectos">
+          <div class="section-heading">
+            <h2>Proyectos</h2>
+            <p>Iniciativas orientadas a la sostenibilidad, la cultura y el fortalecimiento comunitario.</p>
+          </div>
+          <div class="project-grid">
+            <article class="project-card">
+              <div class="media-card">
+                <div class="placeholder-panel">
+                  <small>Imagen destacada</small>
+                  <strong>Conservación ambiental</strong>
+                  <span>Espacio preparado para fotografía del territorio y la biodiversidad.</span>
+                </div>
+              </div>
+              <div class="card-body">
+                <h3>Conservación ambiental</h3>
+                <p>Acciones para la protección del agua, la flora, la fauna y los ecosistemas del municipio.</p>
+                <a class="btn btn-secondary" href="#contacto">Conocer más</a>
+              </div>
+            </article>
+            <article class="project-card">
+              <div class="media-card">
+                <div class="placeholder-panel">
+                  <small>Imagen destacada</small>
+                  <strong>Educación</strong>
+                  <span>Espacio preparado para fotografía de talleres, formación y participación.</span>
+                </div>
+              </div>
+              <div class="card-body">
+                <h3>Educación</h3>
+                <p>Programas formativos orientados a la cultura, la identidad y la participación ciudadana.</p>
+                <a class="btn btn-secondary" href="#contacto">Conocer más</a>
+              </div>
+            </article>
+            <article class="project-card">
+              <div class="media-card">
+                <div class="placeholder-panel">
+                  <small>Imagen destacada</small>
+                  <strong>Fortalecimiento comunitario</strong>
+                  <span>Espacio preparado para fotografía de reuniones y organización social.</span>
+                </div>
+              </div>
+              <div class="card-body">
+                <h3>Fortalecimiento comunitario</h3>
+                <p>Procesos de acompañamiento, organización y articulación territorial para la ciudadanía.</p>
+                <a class="btn btn-secondary" href="#contacto">Conocer más</a>
+              </div>
+            </article>
+            <article class="project-card">
+              <div class="media-card">
+                <div class="placeholder-panel">
+                  <small>Imagen destacada</small>
+                  <strong>Agricultura sostenible</strong>
+                  <span>Espacio preparado para fotografía de prácticas agroecológicas.</span>
+                </div>
+              </div>
+              <div class="card-body">
+                <h3>Agricultura sostenible</h3>
+                <p>Promoción de modelos productivos responsables, resistentes y con enfoque territorial.</p>
+                <a class="btn btn-secondary" href="#contacto">Conocer más</a>
+              </div>
+            </article>
+            <article class="project-card">
+              <div class="media-card">
+                <div class="placeholder-panel">
+                  <small>Imagen destacada</small>
+                  <strong>Cultura afrocolombiana</strong>
+                  <span>Espacio preparado para fotografía de tradiciones, memoria y patrimonio.</span>
+                </div>
+              </div>
+              <div class="card-body">
+                <h3>Cultura afrocolombiana</h3>
+                <p>Iniciativas de preservación, difusión y reconocimiento de la riqueza cultural comunitaria.</p>
+                <a class="btn btn-secondary" href="#contacto">Conocer más</a>
+              </div>
+            </article>
+            <article class="project-card">
+              <div class="media-card">
+                <div class="placeholder-panel">
+                  <small>Imagen destacada</small>
+                  <strong>Turismo comunitario</strong>
+                  <span>Espacio preparado para fotografía del territorio como espacio de encuentro.</span>
+                </div>
+              </div>
+              <div class="card-body">
+                <h3>Turismo comunitario</h3>
+                <p>Proyectos que valoran el territorio, la identidad y la experiencia de los visitantes.</p>
+                <a class="btn btn-secondary" href="#contacto">Conocer más</a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="transparencia">
+          <div class="section-heading">
+            <h2>Transparencia</h2>
+            <p>Información accesible para fortalecer la confianza y la relación con la ciudadanía.</p>
+          </div>
+          <div class="docs-grid">
+            <article class="doc-card">
+              <div class="card-body">
+                <h3>Estatutos</h3>
+                <p>Documentos normativos y de organización comunitaria.</p>
+              </div>
+            </article>
+            <article class="doc-card">
+              <div class="card-body">
+                <h3>Resoluciones</h3>
+                <p>Resoluciones vigentes y actos administrativos.</p>
+              </div>
+            </article>
+            <article class="doc-card">
+              <div class="card-body">
+                <h3>Actas</h3>
+                <p>Registro de reuniones y decisiones institucionales.</p>
+              </div>
+            </article>
+            <article class="doc-card">
+              <div class="card-body">
+                <h3>Informes</h3>
+                <p>Reportes de gestión, avances y resultados.</p>
+              </div>
+            </article>
+            <article class="doc-card">
+              <div class="card-body">
+                <h3>Contratación</h3>
+                <p>Información sobre procesos y contratación institucional.</p>
+              </div>
+            </article>
+            <article class="doc-card">
+              <div class="card-body">
+                <h3>Rendición de cuentas</h3>
+                <p>Detalle de compromisos, cumplimiento y seguimiento.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="noticias">
+          <div class="section-heading">
+            <h2>Noticias</h2>
+            <p>Espacio preparado para comunicar avances, encuentros y acciones institucionales.</p>
+          </div>
+          <div class="news-grid">
+            <article class="news-card">
+              <div class="media-card">
+                <div class="placeholder-panel">
+                  <small>Portada</small>
+                  <strong>Próxima publicación</strong>
+                  <span>Espacio preparado para imagen de portada de una noticia institucional.</span>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="news-meta"><span>14 jun 2026</span><span>Cultura</span><span>Autor: Equipo COCOAPI</span></div>
+                <h3>Encuentro comunitario en el territorio</h3>
+                <p>Resumen de una futura publicación institucional sobre participación y fortalecimiento social.</p>
+                <a class="btn btn-secondary" href="#contacto">Leer más</a>
+              </div>
+            </article>
+            <article class="news-card">
+              <div class="media-card">
+                <div class="placeholder-panel">
+                  <small>Portada</small>
+                  <strong>Próxima publicación</strong>
+                  <span>Espacio preparado para imagen de portada de una noticia institucional.</span>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="news-meta"><span>02 jul 2026</span><span>Medio Ambiente</span><span>Autor: Comité Ambiental</span></div>
+                <h3>Acciones de cuidado del río y el territorio</h3>
+                <p>Resumen de una futura publicación sobre manejo ambiental y protección del entorno.</p>
+                <a class="btn btn-secondary" href="#contacto">Leer más</a>
+              </div>
+            </article>
+            <article class="news-card">
+              <div class="media-card">
+                <div class="placeholder-panel">
+                  <small>Portada</small>
+                  <strong>Próxima publicación</strong>
+                  <span>Espacio preparado para imagen de portada de una noticia institucional.</span>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="news-meta"><span>16 jul 2026</span><span>Juventud</span><span>Autor: Comisión de Jóvenes</span></div>
+                <h3>Participación juvenil y liderazgo territorial</h3>
+                <p>Resumen de una futura publicación de la agenda juvenil y comunitaria del consejo.</p>
+                <a class="btn btn-secondary" href="#contacto">Leer más</a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="galeria">
+          <div class="section-heading">
+            <h2>Galería institucional</h2>
+            <p>Diseño responsive preparado para 12 fotografías o más, con zoom suave y apertura en lightbox.</p>
+          </div>
+          <div class="gallery-grid" aria-label="Galería de imágenes institucionales">
+            <figure class="gallery-item" data-title="Comunidad" data-description="Fotografía de participación comunitaria." tabindex="0" role="button" aria-label="Abrir imagen de Comunidad">
+              <div class="placeholder-panel">
+                <small>Categoría</small>
+                <strong>Comunidad</strong>
+                <span>Espacio preparado para fotografía real.</span>
+              </div>
+              <figcaption>Comunidad</figcaption>
+            </figure>
+            <figure class="gallery-item" data-title="Medio Ambiente" data-description="Fotografía del paisaje y la biodiversidad." tabindex="0" role="button" aria-label="Abrir imagen de Medio Ambiente">
+              <div class="placeholder-panel">
+                <small>Categoría</small>
+                <strong>Medio Ambiente</strong>
+                <span>Espacio preparado para fotografía real.</span>
+              </div>
+              <figcaption>Medio Ambiente</figcaption>
+            </figure>
+            <figure class="gallery-item" data-title="Educación" data-description="Fotografía de talleres y formación." tabindex="0" role="button" aria-label="Abrir imagen de Educación">
+              <div class="placeholder-panel">
+                <small>Categoría</small>
+                <strong>Educación</strong>
+                <span>Espacio preparado para fotografía real.</span>
+              </div>
+              <figcaption>Educación</figcaption>
+            </figure>
+            <figure class="gallery-item" data-title="Cultura" data-description="Fotografía de tradiciones y patrimonio." tabindex="0" role="button" aria-label="Abrir imagen de Cultura">
+              <div class="placeholder-panel">
+                <small>Categoría</small>
+                <strong>Cultura</strong>
+                <span>Espacio preparado para fotografía real.</span>
+              </div>
+              <figcaption>Cultura</figcaption>
+            </figure>
+            <figure class="gallery-item" data-title="Infraestructura" data-description="Fotografía de obras y espacios comunitarios." tabindex="0" role="button" aria-label="Abrir imagen de Infraestructura">
+              <div class="placeholder-panel">
+                <small>Categoría</small>
+                <strong>Infraestructura</strong>
+                <span>Espacio preparado para fotografía real.</span>
+              </div>
+              <figcaption>Infraestructura</figcaption>
+            </figure>
+            <figure class="gallery-item" data-title="Eventos" data-description="Fotografía de encuentros institucionales." tabindex="0" role="button" aria-label="Abrir imagen de Eventos">
+              <div class="placeholder-panel">
+                <small>Categoría</small>
+                <strong>Eventos</strong>
+                <span>Espacio preparado para fotografía real.</span>
+              </div>
+              <figcaption>Eventos</figcaption>
+            </figure>
+            <figure class="gallery-item" data-title="Agricultura" data-description="Fotografía de producción sostenible." tabindex="0" role="button" aria-label="Abrir imagen de Agricultura">
+              <div class="placeholder-panel">
+                <small>Categoría</small>
+                <strong>Agricultura</strong>
+                <span>Espacio preparado para fotografía real.</span>
+              </div>
+              <figcaption>Agricultura</figcaption>
+            </figure>
+            <figure class="gallery-item" data-title="Juventud" data-description="Fotografía de jóvenes liderando procesos." tabindex="0" role="button" aria-label="Abrir imagen de Juventud">
+              <div class="placeholder-panel">
+                <small>Categoría</small>
+                <strong>Juventud</strong>
+                <span>Espacio preparado para fotografía real.</span>
+              </div>
+              <figcaption>Juventud</figcaption>
+            </figure>
+            <figure class="gallery-item" data-title="Mujeres" data-description="Fotografía de liderazgo femenino." tabindex="0" role="button" aria-label="Abrir imagen de Mujeres">
+              <div class="placeholder-panel">
+                <small>Categoría</small>
+                <strong>Mujeres</strong>
+                <span>Espacio preparado para fotografía real.</span>
+              </div>
+              <figcaption>Mujeres</figcaption>
+            </figure>
+            <figure class="gallery-item" data-title="Patrimonio" data-description="Fotografía de memoria y tradición." tabindex="0" role="button" aria-label="Abrir imagen de Patrimonio">
+              <div class="placeholder-panel">
+                <small>Categoría</small>
+                <strong>Patrimonio</strong>
+                <span>Espacio preparado para fotografía real.</span>
+              </div>
+              <figcaption>Patrimonio</figcaption>
+            </figure>
+            <figure class="gallery-item" data-title="Territorio" data-description="Fotografía del paisaje de Nechí." tabindex="0" role="button" aria-label="Abrir imagen de Territorio">
+              <div class="placeholder-panel">
+                <small>Categoría</small>
+                <strong>Territorio</strong>
+                <span>Espacio preparado para fotografía real.</span>
+              </div>
+              <figcaption>Territorio</figcaption>
+            </figure>
+            <figure class="gallery-item" data-title="Río Cauca" data-description="Fotografía del río como eje vital del municipio." tabindex="0" role="button" aria-label="Abrir imagen de Río Cauca">
+              <div class="placeholder-panel">
+                <small>Categoría</small>
+                <strong>Río Cauca</strong>
+                <span>Espacio preparado para fotografía real.</span>
+              </div>
+              <figcaption>Río Cauca</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section>
+          <div class="section-heading">
+            <h2>Aliados institucionales</h2>
+            <p>Espacio preparado para mostrar logotipos de aliados, entidades y organizaciones de apoyo.</p>
+          </div>
+          <div class="partners-grid">
+            <div class="partner-card"><div class="logo-mark">Alianza</div></div>
+            <div class="partner-card"><div class="logo-mark">Fundación</div></div>
+            <div class="partner-card"><div class="logo-mark">Municipio</div></div>
+            <div class="partner-card"><div class="logo-mark">ONG</div></div>
+            <div class="partner-card"><div class="logo-mark">Académica</div></div>
+          </div>
+        </section>
+
+        <section>
+          <div class="section-heading">
+            <h2>Videos institucionales</h2>
+            <p>Sección preparada para integrar contenido audiovisual de YouTube o Vimeo con miniaturas elegantes.</p>
+          </div>
+          <div class="video-grid">
+            <article class="video-card card">
+              <div class="placeholder-panel video-thumb">
+                <small>Video institucional</small>
+                <strong>Testimonio comunitario</strong>
+                <span>Espacio preparado para miniatura de video.</span>
+              </div>
+              <div class="card-body">
+                <h3>Testimonio comunitario</h3>
+                <p>Miniatura lista para vincular un video institucional o documental.</p>
+              </div>
+            </article>
+            <article class="video-card card">
+              <div class="placeholder-panel video-thumb">
+                <small>Video institucional</small>
+                <strong>Territorio y sostenibilidad</strong>
+                <span>Espacio preparado para miniatura de video.</span>
+              </div>
+              <div class="card-body">
+                <h3>Territorio y sostenibilidad</h3>
+                <p>Miniatura lista para vincular un video institucional o documental.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="documentos">
+          <div class="section-heading">
+            <h2>Documentos</h2>
+            <p>Espacio organizado para descargas y consulta pública.</p>
+          </div>
+          <div class="docs-grid">
+            <article class="doc-card">
+              <div class="card-body">
+                <h3>Estatutos</h3>
+                <p>Documento institucional descargable.</p>
+              </div>
+            </article>
+            <article class="doc-card">
+              <div class="card-body">
+                <h3>Resoluciones</h3>
+                <p>Documentos legales descargables.</p>
+              </div>
+            </article>
+            <article class="doc-card">
+              <div class="card-body">
+                <h3>Formatos</h3>
+                <p>Formularios para solicitudes y trámites.</p>
+              </div>
+            </article>
+            <article class="doc-card">
+              <div class="card-body">
+                <h3>Informes</h3>
+                <p>Reportes de gestión y actividades.</p>
+              </div>
+            </article>
+            <article class="doc-card">
+              <div class="card-body">
+                <h3>Convocatorias</h3>
+                <p>Convocatorias institucionales y comunitarias.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="contacto">
+          <div class="section-heading">
+            <h2>Contacto</h2>
+            <p>Canal institucional para la comunidad, aliados y visitantes.</p>
+          </div>
+          <div class="contact-grid">
+            <div class="card">
+              <h3>Información institucional</h3>
+              <div class="contact-list">
+                <div><strong>Dirección:</strong><span>Municipio de Nechí, Antioquia</span></div>
+                <div><strong>Correo:</strong><span>contacto@cocoapi.org</span></div>
+                <div><strong>Teléfono:</strong><span>+57 000 000 0000</span></div>
+                <div><strong>Horario:</strong><span>Lunes a viernes · 8:00 a.m. a 12:00 m. y 2:00 a 5:00 p.m.</span></div>
+              </div>
+            </div>
+            <div class="card">
+              <form aria-label="Formulario de contacto">
+                <div class="form-row">
+                  <div>
+                    <label for="name">Nombre</label>
+                    <input id="name" name="name" type="text" placeholder="Tu nombre" />
+                  </div>
+                  <div>
+                    <label for="email">Correo</label>
+                    <input id="email" name="email" type="email" placeholder="tucorreo@ejemplo.com" />
+                  </div>
+                </div>
+                <div>
+                  <label for="phone">Teléfono</label>
+                  <input id="phone" name="phone" type="tel" placeholder="Tu teléfono" />
+                </div>
+                <div>
+                  <label for="message">Mensaje</label>
+                  <textarea id="message" name="message" placeholder="Escribe tu mensaje"></textarea>
+                </div>
+                <button class="btn btn-primary" type="submit">Enviar mensaje</button>
+              </form>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-grid">
+        <div>
+          <h3>COCOAPI</h3>
+          <p>Consejo Comunitario Afrocolombiano del municipio de Nechí, comprometido con la identidad, la participación y la sostenibilidad territorial.</p>
+        </div>
+        <div>
+          <h3>Enlaces rápidos</h3>
+          <div class="footer-links">
+            <a href="#historia">Nuestra Historia</a>
+            <a href="#organizacion">Organización</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#documentos">Documentos</a>
+          </div>
+        </div>
+        <div>
+          <h3>Legal</h3>
+          <div class="footer-links">
+            <a href="#contacto">Contacto</a>
+            <a href="#transparencia">Transparencia</a>
+            <a href="#galeria">Galería</a>
+            <a href="#noticias">Noticias</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> COCOAPI. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+  </div>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-panel" role="dialog" aria-modal="true" aria-label="Vista ampliada de imagen">
+      <div class="placeholder-panel" id="lightboxContent">
+        <small>Vista ampliada</small>
+        <strong id="lightboxTitle">Imagen institucional</strong>
+        <span id="lightboxDescription">Espacio preparado para una fotografía real.</span>
+      </div>
+      <button id="closeLightbox" type="button">Cerrar</button>
+    </div>
+  </div>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (toggle && navLinks) {
+      toggle.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+      });
+    }
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxTitle = document.getElementById('lightboxTitle');
+    const lightboxDescription = document.getElementById('lightboxDescription');
+    const closeLightbox = document.getElementById('closeLightbox');
+
+    galleryItems.forEach((item) => {
+      const openGallery = () => {
+        lightboxTitle.textContent = item.dataset.title || 'Imagen institucional';
+        lightboxDescription.textContent = item.dataset.description || 'Espacio preparado para una fotografía real.';
+        lightbox.classList.add('open');
+        lightbox.setAttribute('aria-hidden', 'false');
+      };
+
+      item.addEventListener('click', openGallery);
+      item.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          openGallery();
+        }
+      });
+    });
+
+    const close = () => {
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden', 'true');
+    };
+
+    closeLightbox?.addEventListener('click', close);
+    lightbox?.addEventListener('click', (event) => {
+      if (event.target === lightbox) close();
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') close();
+    });
+  </script>
+</body>
+</html>
